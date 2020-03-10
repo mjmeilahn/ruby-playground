@@ -1,1 +1,3 @@
-# ruby-playground
+# Ruby Playground
+
+1. Basics

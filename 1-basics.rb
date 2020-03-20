@@ -31,3 +31,6 @@
 # puts x.class
 # p y
 # p z
+# odd = y.select { |num| num.odd? }
+# even = y.select { |num| num.even? }
+# p even

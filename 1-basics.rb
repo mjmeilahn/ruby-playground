@@ -33,4 +33,14 @@
 # p z
 # odd = y.select { |num| num.odd? }
 # even = y.select { |num| num.even? }
-# p even
+# p even.reverse!
+
+# .reverse! AND SIMILAR EXCLAMATIONS MUTATE THE OBJECT STATE
+
+# 5. HASHES
+# example = { 'a' => 1, 'b' => 2, 'c' => 3, e: 4 }
+# example.each { |key, val| puts "The type is #{key.class} and the value is #{val}" }
+
+# SYMBOLS ARE NEW-ISH TO RAILS AND COUNT AS AN IDENTITY
+# sample = example.select { |key, val| key.is_a?(Symbol) }
+# puts sample

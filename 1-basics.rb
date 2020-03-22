@@ -52,19 +52,19 @@
 
 # 6. HOMEWORK
 # users = [
-#     { username: 'matt', password: '1234' },
-#     { username: 'jack', password: 'jack' },
-#     { username: 'kyle', password: 'ok123' }
+#   { username: 'matt', password: '1234' },
+#   { username: 'jack', password: 'jack' },
+#   { username: 'kyle', password: 'ok123' }
 # ]
 
 # def auth_user(username, password, all_users)
-#     all_users.each do |user|
-#         if user[:username] == username && user[:password] == password
-#             return user
-#         end
+#   all_users.each do |user|
+#     if user[:username] == username && user[:password] == password
+#       return user
 #     end
+#   end
 
-#     "Credentials were not correct"
+#   "Credentials were not correct"
 # end
 
 # puts "Welcome to Authenticator"
@@ -74,25 +74,25 @@
 # attempts = 1
 
 # while attempts < 4
-#     # GET USERNAME
-#     print "Username: "
-#     username = gets.chomp
+#   # GET USERNAME
+#   print "Username: "
+#   username = gets.chomp
 
-#     # GET PASSWORD
-#     print "Password: "
-#     password = gets.chomp
+#   # GET PASSWORD
+#   print "Password: "
+#   password = gets.chomp
 
-#     # RETURN USER OR ERROR
-#     auth = auth_user(username, password, users)
-#     puts auth
+#   # RETURN USER OR ERROR
+#   auth = auth_user(username, password, users)
+#   puts auth
 
-#     # EXIT AFTER 3 ATTEMPTS
-#     attempts += 1
-#     puts "You have reached the maximum amount of attempts" if attempts == 4
-#     break if attempts == 4
+#   # EXIT AFTER 3 ATTEMPTS
+#   attempts += 1
+#   puts "You have reached the maximum amount of attempts" if attempts == 4
+#   break if attempts == 4
 
-#     # EXIT OR CONTINUE
-#     puts "Enter q to quit or any other key to continue"
-#     input = gets.chomp.downcase
-#     break if input == "q"
+#   # EXIT OR CONTINUE
+#   puts "Enter q to quit or any other key to continue"
+#   input = gets.chomp.downcase
+#   break if input == "q"
 # end

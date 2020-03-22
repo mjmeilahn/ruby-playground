@@ -96,3 +96,45 @@
 #   input = gets.chomp.downcase
 #   break if input == "q"
 # end
+
+
+# 7. HOMEWORK
+cities = {
+  'El Cajon' => '619',
+  'Sacremento' => '916',
+  'San Diego' => '858',
+  'San Francisco' => '415'
+}
+
+def get_city_names(hash)
+  puts hash.keys
+end
+
+def get_area_code(hash, key)
+  if hash[key]
+    puts "The area code for #{key} is #{hash[key]}"
+  else
+    puts "Please enter a valid city"
+    return false
+  end
+end
+
+loop do
+  puts "Do you want to lookup an area code based on a city name? (Y/N)"
+  choice = gets.chomp.downcase
+
+  if choice == 'n'
+    break
+  elsif choice != 'y'
+    puts "Error: Choose a valid response (Y/N)"
+  else
+    puts "Which city do you want the area code for?"
+    get_city_names(cities)
+    print "Enter your selection: "
+
+    city = gets.chomp
+    result = get_area_code(cities, city)
+
+    break if result == false
+  end
+end

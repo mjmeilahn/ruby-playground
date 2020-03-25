@@ -141,53 +141,53 @@
 
 
 # 8. CLASSES
-class Student
-    attr_accessor :first_name, :last_name, :email, :user, :password
-    attr_reader :username
+# class Student
+#     attr_accessor :first_name, :last_name, :email, :user, :password
+#     attr_reader :username
 
-    @first_name
-    @last_name
-    @email
-    @user
-    @username
-    @password
+#     @first_name
+#     @last_name
+#     @email
+#     @user
+#     @username
+#     @password
 
-    # REDUNDANT GETTER / SETTER PATTERN
-    # def first_name=(first)
-    #     @first_name = first
-    # end
+#     # REDUNDANT GETTER / SETTER PATTERN
+#     # def first_name=(first)
+#     #     @first_name = first
+#     # end
 
-    # def first_name
-    #     @first_name
-    # end
+#     # def first_name
+#     #     @first_name
+#     # end
 
-    def initialize(first_name, last_name, email, user, password)
-        @first_name = first_name
-        @last_name = last_name
-        @email = email
-        @user = user
-        @password = password
-    end
+#     def initialize(first_name, last_name, email, user, password)
+#         @first_name = first_name
+#         @last_name = last_name
+#         @email = email
+#         @user = user
+#         @password = password
+#     end
 
-    def set_username
-        # HARD CODED VALUE
-        @username = "mjmeilahn"
-    end
+#     def set_username
+#         # HARD CODED VALUE
+#         @username = "mjmeilahn"
+#     end
 
-    def to_s
-        "First name: #{@first_name}"
-    end
-end
+#     def to_s
+#         "First name: #{@first_name}"
+#     end
+# end
 
-# INITIALIZE CLASS
-matt = Student.new("Matthew", "Meilahn", "mjm@mjm.com", "mjmeilahn", "1234")
+# # INITIALIZE CLASS
+# matt = Student.new("Matthew", "Meilahn", "mjm@mjm.com", "mjmeilahn", "1234")
 
-# USING attr_accessor
-# matt.first_name = "Matt"
-# matt.last_name = "Meilahn"
-puts "First: #{matt.first_name}"
-puts "Last: #{matt.last_name}"
-puts "User: #{matt.user}"
+# # USING attr_accessor
+# # matt.first_name = "Matt"
+# # matt.last_name = "Meilahn"
+# puts "First: #{matt.first_name}"
+# puts "Last: #{matt.last_name}"
+# puts "User: #{matt.user}"
 
-# USING attr_reader
-puts "Username: #{matt.set_username}"
+# # USING attr_reader
+# puts "Username: #{matt.set_username}"

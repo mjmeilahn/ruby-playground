@@ -192,4 +192,10 @@
 # # USING attr_reader
 # puts "Username: #{matt.set_username}"
 
+
 # 9. FINAL PROJECT
+
+require 'bcrypt'
+
+password = BCrypt::Password.create('password1234!')
+puts password

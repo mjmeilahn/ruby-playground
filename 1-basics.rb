@@ -191,3 +191,5 @@
 
 # # USING attr_reader
 # puts "Username: #{matt.set_username}"
+
+# 9. FINAL PROJECT

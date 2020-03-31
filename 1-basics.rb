@@ -194,7 +194,6 @@
 
 
 # 9. FINAL PROJECT
-
 require 'bcrypt'
 
 password = BCrypt::Password.create('password1234!')

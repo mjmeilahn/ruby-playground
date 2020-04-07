@@ -142,41 +142,41 @@
 
 # 8. CLASSES
 # class Student
-#     attr_accessor :first_name, :last_name, :email, :user, :password
-#     attr_reader :username
+#   attr_accessor :first_name, :last_name, :email, :user, :password
+#   attr_reader :username
 
+#   @first_name
+#   @last_name
+#   @email
+#   @user
+#   @username
+#   @password
+
+#   # REDUNDANT GETTER / SETTER PATTERN
+#   def first_name=(first)
+#     @first_name = first
+#   end
+
+#   def first_name
 #     @first_name
-#     @last_name
-#     @email
-#     @user
-#     @username
-#     @password
+#   end
 
-#     # REDUNDANT GETTER / SETTER PATTERN
-#     # def first_name=(first)
-#     #     @first_name = first
-#     # end
+#   def initialize(first_name, last_name, email, user, password)
+#     @first_name = first_name
+#     @last_name = last_name
+#     @email = email
+#     @user = user
+#     @password = password
+#   end
 
-#     # def first_name
-#     #     @first_name
-#     # end
+#   def set_username
+#     # HARD CODED VALUE
+#     @username = "mjmeilahn"
+#   end
 
-#     def initialize(first_name, last_name, email, user, password)
-#         @first_name = first_name
-#         @last_name = last_name
-#         @email = email
-#         @user = user
-#         @password = password
-#     end
-
-#     def set_username
-#         # HARD CODED VALUE
-#         @username = "mjmeilahn"
-#     end
-
-#     def to_s
-#         "First name: #{@first_name}"
-#     end
+#   def to_s
+#     "First name: #{@first_name}"
+#   end
 # end
 
 # # INITIALIZE CLASS
@@ -196,5 +196,27 @@
 # 9. FINAL PROJECT
 require 'bcrypt'
 
-password = BCrypt::Password.create('password1234!')
-puts password
+users = [
+  { username: 'matt', password: '1234' },
+  { username: 'jack', password: 'jack' },
+  { username: 'kyle', password: 'ok123' }
+]
+
+def create_hash (str)
+  BCrypt::Password.create(str)
+end
+
+def verify_hash (str, hash)
+  verify = BCrypt::Password.new(hash)
+  str == verify
+end
+
+def secure_users (all_users)
+  all_users.each do |user_record|
+    user_record[:password] = create_hash(user_record[:password])
+  end
+
+  all_users
+end
+
+puts secure_users(users)

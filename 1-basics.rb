@@ -194,29 +194,37 @@
 
 
 # 9. FINAL PROJECT
-require 'bcrypt'
+module AuthUser
+  require 'bcrypt'
 
-users = [
-  { username: 'matt', password: '1234' },
-  { username: 'jack', password: 'jack' },
-  { username: 'kyle', password: 'ok123' }
-]
-
-def create_hash (str)
-  BCrypt::Password.create(str)
-end
-
-def verify_hash (str, hash)
-  verify = BCrypt::Password.new(hash)
-  str == verify
-end
-
-def secure_users (all_users)
-  all_users.each do |user_record|
-    user_record[:password] = create_hash(user_record[:password])
+  def self.create_hash (str)
+    BCrypt::Password.create(str)
   end
 
-  all_users
-end
+  def self.verify (str)
+    BCrypt::Password.new(str)
+  end
 
-puts secure_users(users)
+  def self.secure_users (users)
+    users.each do |user|
+      user[:password] = create_hash(user[:password])
+    end
+
+    users
+  end
+
+  def self.auth_user (username, password, users)
+    found = false
+
+    users.each do |user|
+      if user[:username] == username && verify(user[:password]) == password
+        found = true
+        return user
+      end
+    end
+
+    unless found
+      puts "Credentials were not correct"
+    end
+  end
+end
